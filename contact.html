@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="images/tele.png" rel="icon">
+    <link href="css/contact.css" rel="stylesheet">
+    <title>Contact</title>
+</head>
+
+<body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v8.0'
+        });
+      };
+
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="738097309686636"
+theme_color="#000000"
+logged_in_greeting="Hello! How are you?"
+logged_out_greeting="Hello! How are you?">
+    </div>
+    <div id="rbgShiftSlider" class="rgbShiftSlider"></div>
+        <div id="main">
+            <i onclick="fulls()" class="fa" id="fulls">&#xf00e;</i>
+            <a href="laptop.html"><i class="fa" id="cimg">&#xf00d;</i></a>
+            <h1  data-aos="zoom-in" class="experiment-title" contenteditable="true">Contact Labib</h1>
+            <!-- <p id="type">( You can type your name here <i class="fa fa-angle-double-up"></i> )</p> -->
+            <div id="d1">
+                <div data-aos="fade-up" class="detail">
+                    <a class="underlined underlined--thick cin">I am always happy to dirty my hands on a complex task,
+                        so do not hesitate to hit me up with your requests!
+                        Want to work together? <br>
+                        <a class="talk" onclick="sendMail()"> Let's talk. </a><span class="blink">_</span>
+                    </a>
+                </div>
+                <div data-aos="fade-left" id="social">
+                    <div class="socials">
+                        <div  class="socials-item">
+                            <a href="https://www.linkedin.com/in/mir-labib-hossain-775b321aa/"
+                                class="socials-item-icon socials-item-icon__linkedin" target="_blank">
+                                <i>
+                                    <span></span>
+                                </i>
+                            </a>
+                        </div>
+                        <!-- <div class="socials-item">
+                        <a href="https://codepen.io/" class="socials-item-icon socials-item-icon__codepen"
+                            target="_blank">
+                            <i>
+                                <span></span>
+                            </i>
+                        </a>
+                    </div> -->
+                        <div class="socials-item">
+                            <a href="https://github.com/Mir-Labib-Hossain" class="socials-item-icon socials-item-icon__github"
+                                target="_blank">
+                                <i>
+                                    <span></span>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="socials-item">
+                            <a href="https://www.instagram.com/_mir.labib_"
+                                class="socials-item-icon socials-item-icon__instagram" target="_blank">
+                                <i>
+                                    <span></span>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="socials-item">
+                            <a href="https://www.facebook.com/mir.labib.hossain/"
+                                class="socials-item-icon socials-item-icon__facebook" target="_blank">
+                                <i>
+                                    <span></span>
+                                </i>
+                            </a>
+                        </div>
+                        <!-- <div class="socials-item">
+                            <a onclick="sendMail()" class="socials-item-icon socials-item-icon__gmail" target="_blank">
+                                <i>
+                                    <span></span>
+                                </i>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div id="d2" class="cin">
+                <div data-aos="fade-right" class="detail tooltip" id="CopyM">
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    <a class="underlined underlined--thick"> <span class="path">Mobile :</span> 016********</a>
+                    <i class="fa fa-copy"></i>
+                </div>
+                <div data-aos="fade-left" class="detail tooltip" id="CopyE">
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    <a class="underlined underlined--thick"> <span class="path">E-mail :</span>
+                        mirlabibhossain99@gmail.com</a>
+                    <i class="fa fa-copy"></i>
+                    </button>
+                </div>
+                <div data-aos="fade-right" class="detail">
+                    <a href="#location" class="underlined underlined--thick"> <span class="path">Location :</span>
+                        Mirpur, Dhaka, Bangladesh</a>
+                </div>
+            </div>
+            <iframe data-aos="fade-up" id="location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d456.2281339581767!2d90.36909667760975!3d23.824818669358887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0c1c61277db%3A0xc7d18838730e2e59!2sMirpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1599878430967!5m2!1sen!2sbd"
+                allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.7/pixi.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/hmongouachon/rgbShiftSlider/js/rgbShiftSlider.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/contact.js"></script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    .noScroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        font-family: 'Dosis', Helvetica, Arial, sans-serif;
+        font-weight:600; 
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background: black;
+        text-align: center;
+        background: url(image/blackbackground.jpg) no-repeat center fixed; 
+        background-size: cover;
+    }
+    .name{
+        color:white;
+        animation: neonGlow 2s infinite alternate;
+        animation-delay: 1s;
+        text-shadow: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+        margin-top:200px; 
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size:6vw;
+
+    }
+    @keyframes neonGlow {
+    0% {opacity: .5;
+        text-shadow: 0 0 10px rgba(255,255,255,.8),
+                    0 0 20px rgba(255,255,255,.8),
+                    0 0 22px  rgba(255,255,255,.8),
+                    0 0 40px  rgba(66,220,219,.8),
+                    0 0 60px  rgba(66,220,219,.8),
+                    0 0 80px  rgba(66,220,219,.5),
+                    0 0 100px rgba(66,220,219,.5),
+                    0 0 140px rgba(66,220,219,.5),
+                    0 0 200px rgba(66,220,219,.5);
+    }
+    100% {opacity: 1;
+        text-shadow: 0 0 2px rgba(255,255,255,.8),
+                    0 0 8px rgba(255,255,255,.8),
+                    0 0 10px rgba(255,255,255,.8),
+                    0 0 20px rgba(66,220,219,.8),
+                    0 0 30px rgba(66,220,219,.8),
+                    0 0 40px rgba(66,220,219,.8),
+                    0 0 50px rgba(66,220,219,.5),
+                    0 0 80px rgba(66,220,219,.5);
+    }
+    }
+
+</style>
+<title>Home</title>
+</head>
+<body>
+ <div>
+    <p class="name"><a href="feed.html">U-NETWORK</a></p>     
+</div>
+</body>
+</html>

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="image/cakelogo1.png">
+  <script>
+    function onReady(callback) {
+      var intervalId = window.setInterval(function () {
+        if (document.getElementsByTagName('body') !== undefined) {
+          window.clearInterval(intervalId);
+          callback.call(this);
+        }
+      }, 1000);
+    }
+
+    function setVisible(selector, visible) {
+      document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+    onReady(function () {
+      setVisible('#page', true);
+      setVisible('#loading', false);
+    });
+  </script>
+</head>
+<title>Cup er Dokan</title>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Raleway);
+  @import url(https://fonts.googleapis.com/css?family=Satisfy);
+  @import url(https://fonts.googleapis.com/css?family=Acme);
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  #page {
+    display: none;
+  }
+
+  #loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("image/load.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo p {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  i {
+    color: white;
+    height: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+
+  h6 {
+    font-family: 'Satisfy', cursive;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .top {
+    background-image: url("image/desback2.jpg");
+    height: 630px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .welcome {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    left: 25%;
+    text-align: center;
+    font-family: 'Satisfy', cursive;
+    font-size: 15vw;
+    cursor: default;
+    color: white;
+    text-shadow: 2px 2px 14px black;
+    animation-name: welcome;
+    animation-duration: 2s;
+  }
+
+  @keyframes welcome {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .navbar {
+    background: transparent;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    margin-left: 10px;
+  }
+
+  .navbar-brand img {
+    transition: transform 2s;
+    transition-timing-function: ease;
+  }
+
+  .navbar-brand img:hover {
+    transform: rotate(360deg);
+  }
+
+  .navbar-nav a {
+    text-align: center;
+  }
+
+  .avatar {
+    margin: auto;
+    opacity: 1;
+    filter: brightness(200%);
+  }
+
+  /*login  Mondal style starts*/
+  .m input[type=text],
+  input[type=password] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .m button {
+    background-color: palevioletred;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .m button:hover {
+    opacity: 0.8;
+  }
+
+  /* Extra styles for the cancel button */
+  .m .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+
+  /* Center the image and position the close button */
+  .m .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+
+  .m img.avatar {
+    width: 20%;
+    border-radius: 50%;
+    opacity: 1;
+    filter: brightness(100%);
+  }
+
+  .m .container {
+    padding: 16px;
+  }
+
+  .m span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+  /* The Modal (background) */
+  .m .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    width: 30%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    margin-left: 35%;
+
+  }
+
+  /* Modal Content/Box */
+  .m .modal-content {
+    background-color: white;
+    margin-top: 60px;
+    border: 1px solid #888;
+    width: 100%;
+    /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button (x) */
+  .m .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .m .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+  /* Add Zoom Animation */
+  .m .animate {
+    -webkit-animation: animatezoom 1s;
+    animation: animatezoom 1s
+  }
+
+  @-webkit-keyframes animatezoom {
+    from {
+      -webkit-transform: scale(0)
+    }
+
+    to {
+      -webkit-transform: scale(1)
+    }
+  }
+
+  @keyframes animatezoom {
+    from {
+      transform: scale(0)
+    }
+
+    to {
+      transform: scale(1)
+    }
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .m span.psw {
+      display: block;
+      float: none;
+    }
+
+    .m .cancelbtn {
+      width: 100%;
+    }
+  }
+
+  /* Mondal style end*/
+
+  @media screen and (min-width:575px) {
+    .ml {
+      margin-left: auto;
+    }
+
+    .navbar-nav {
+      display: flex;
+      width: 100%;
+    }
+
+    nav {
+      height: 50px;
+      overflow: hidden;
+    }
+
+    .white {
+      height: 48px;
+    }
+
+    .fixed-top.scrolled:hover {
+      opacity: 1;
+    }
+
+    .nav-link {
+      opacity: .7;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .nav-link p {
+      margin-top: 15px;
+    }
+
+  }
+
+  /*Boro display*/
+  @media screen and (min-width:575px) {
+    .navbar-nav {
+      display: flex;
+      width: 100%;
+    }
+
+    nav {
+      height: 50px;
+    }
+
+    .nav-link {
+      color: black;
+    }
+
+    .fixed-top.scrolled {
+      background-color: white !important;
+      transition: background-color 1s linear;
+      opacity: .9;
+    }
+
+    .fixed-top.scrolled .nav-link {
+      color: black !important;
+      opacity: .7;
+    }
+
+    .fixed-top.scrolled .nav-link:hover {
+      color: black;
+      opacity: 1;
+    }
+
+    .fixed-top.scrolled:hover {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width:575px) {
+    .navbar {
+      background-color: white;
+    }
+
+    .nav-link {
+      color: black;
+    }
+
+    nav p {
+      color: black;
+    }
+  }
+
+  .body {
+    display: flex;
+    margin-top: 50px;
+  }
+
+  .bodydetails {
+    flex: 60%;
+    padding: 20px;
+    position: relative;
+    margin: 0;
+    text-align: center;
+  }
+
+  .bodydetails h6 {
+    font-size: 3vw;
+  }
+
+  .bodydetails p {
+    opacity: .7;
+  }
+
+  .bottomborder {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .fa-angle-double-down {
+    animation-name: fa;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes fa {
+    0% {
+      top: 1
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .bodyimage {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .column {
+    flex: 35%;
+    max-width: 35%;
+    padding: 0 4px;
+  }
+
+  @media (max-width: 800px) {
+    .bodyimage {
+      margin: 0 30px;
+    }
+
+    .bodyimage .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+  .bodyimage .column img {
+    vertical-align: middle;
+    width: 100%;
+    overflow: hidden;
+    transition: 1s;
+    margin-top: 8px;
+
+  }
+
+  .bodyimage .column img:hover {
+    box-shadow: 10px 5px 15px black;
+
+  }
+
+  @media screen and (max-width:650px) {
+    .body {
+      flex-direction: column;
+    }
+
+    .bodydetails h6 {
+      font-size: 5vw;
+    }
+  }
+
+  .dessert {
+    margin: 30px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5)), url("image/desback3.jpg");
+  }
+
+  .parallax h6 {
+    font-size: 6vw;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 50px;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+  }
+
+  .menu .box-wrapper {
+    background-color: transparent;
+    overflow: hidden;
+    max-width: 200px;
+    padding: 0;
+    text-align: center;
+    float: left;
+    height: 470px;
+    margin: 10px;
+    position: relative;
+    transition: .5s;
+  }
+
+  .menu img {
+    max-width: 100%;
+  }
+
+  .new {
+    position: absolute;
+    right: 0
+  }
+
+  .new img {
+    width: 150px;
+    filter: grayscale(100%);
+
+  }
+
+  .menu .title {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Acme', sans-serif;
+  }
+
+  .menu .desc {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.2em;
+    display: none;
+  }
+
+  .menu .box-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu .box-content:before {
+    content: '';
+    width: 200%;
+    height: 120px;
+    position: absolute;
+    display: block;
+    background-color: #fff;
+    transform: rotate(-8deg);
+    top: -30px;
+    left: -10%;
+    z-index: -1;
+  }
+
+  .menu .price {
+    font-size: 2em;
+    font-weight: 900;
+    display: none;
+    width: 100px;
+    margin: 10px auto 0;
+    position: relative;
+    font-family: 'Satisfy', cursive;
+  }
+
+  .menu .price:after,
+  .menu .price:before {
+    content: '';
+    height: 1px;
+    width: 50px;
+    display: block;
+    position: absolute;
+    background-color: #ddd;
+    top: 18px;
+  }
+
+  .menu .price:before {
+    left: -50px;
+  }
+
+  .menu .price:after {
+    right: -50px;
+  }
+
+  .menu .box-wrapper:hover .price,
+  .menu .box-wrapper:hover .desc {
+    display: block;
+  }
+
+  .menu .box-wrapper:hover {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0px 5px 43px lightblue;
+  }
+
+  .menu .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu .footer li {
+    color: #EFD829;
+  }
+
+  .commingsoon {
+    font-size: 3vw;
+    animation-name: commingsoon;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes commingsoon {
+    0% {
+      top: 1;
+    }
+
+    100% {
+      opacity: .2;
+    }
+  }
+
+  /* .icecream{
+  background-repeat: no-repeat;
+  background-size:auto 100% ;
+  background-position: center;
+  height: 400px;
+  width: 100%;
+  animation-name: icecream;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes icecream {
+  0%{background-image: url("image/ice1.jpg");}
+  100%{background-image: url("image/ice2.jpg");}
+} */
+  .cook {
+    margin: 30px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5)), url("image/cookback.gif");
+  }
+
+  .reservation {
+    position: relative;
+    margin: 30px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5)), url("image/restaurant.jpg");
+    height: 20vh;
+    transition: height 2s ease-in-out;
+    overflow: hidden;
+  }
+
+  .reservation:hover {
+    height: 70vh;
+  }
+
+  .reservation h6 {
+    padding-top: 5vh;
+  }
+
+  .reservation .logo i {
+    font-size: 20vh;
+    transition: 1s;
+  }
+
+  .reservation .logo i:hover {
+    text-shadow: 2px 2px 14px white;
+    transform: rotate(5deg);
+
+  }
+
+  /* 
+.reservation:hover .reservation h6{
+ top: 0%!important;
+  transform: translate(-50%, -50%);
+} */
+  /* Jumbtron Footer */
+  .jumbotron {
+    margin: 10px 0 0 0;
+    border-radius: 0;
+    background: white;
+    box-shadow: 10px 5px 15px black;
+    padding: 30px;
+    height: 200px;
+    display: flex;
+  }
+
+  .jumbotron img {
+    width: 20px;
+    margin: 10px;
+    filter: grayscale(100%);
+  }
+
+  .jumbotron li * {
+    display: inline;
+    text-decoration: none;
+    color: black;
+    transition: .5s;
+    font-family: 'Acme', sans-serif;
+    cursor: pointer;
+  }
+
+  .jumbotron li p {
+    margin-top: 20px;
+    opacity: .7;
+  }
+
+  .jumbotron li:hover img {
+    filter: none;
+  }
+
+  .jumbotron li:hover p {
+    opacity: 1;
+  }
+
+  .jumbotron ul {
+    list-style-type: none;
+    flex: 1;
+    list-style-position: inside;
+  }
+</style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+  <div id="loading"></div>
+
+  <div id="page">
+    <div class="top parallax">
+      <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="navbar-brand">
+          <img src="image/cakelogo1.png" alt="logo" style="filter:brightness(150%); width:40px;">
+        </div>
+        <a href="#top">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <h4 class="nav-link" style="opacity: 1;">Dokan</h4>
+            </li>
+          </ul>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span style="color: black;" class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#categories">
+                <p>Categories</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#find">
+                <p>Find us</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reservation">
+                <p>Reservation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <p>Order</p>
+              </a>
+            </li>
+            <li class="nav-item m ml">
+              <a class="nav-link" style="cursor: pointer;"
+                onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                <p>Join us</p>
+              </a>
+              <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                  <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                      title="Close Modal">&times;</span>
+                    <img src="image/cuplogin.jpg" alt="Avatar" class="avatar">
+                  </div>
+
+                  <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                  </div>
+
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                      class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item" style="padding-top: 5px;">
+              <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="cart!">
+                <p class="fa"> &#xf291;</p>
+              </a>
+            </li>
+            <li class="nav-item" style="margin-top: 5px;">
+              <a class="nav-link" data-toggle="dropdown">
+                <p class="fas fa-bars"></p>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Tablet</a>
+                <a class="dropdown-item" href="#">Smartphone</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="welcome">Welcome</div>
+    </div>
+    <span id="categories"></span>
+    <div class="body">
+      <div class="bodydetails">
+        <h6>What we are offering to you</h6>
+        <div class="bottomborder">
+          <img src="image/border bottom.png" style="width: 100%;">
+        </div>
+        <p>Lorem ipsum, or lipsum as it is <strong>MILK SHAKES</strong> sometimes known, is dummy text used in
+          <strong>ICE-CREAME</strong> laying out print, graphic or web designs. <strong>CUPCAKES</strong> The passage is
+          attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De
+          Finibus Bonorum et <strong>DESSERTS</strong> Malorum for use in a type specimen book.</p>
+        <a href="#scroll" style="text-decoration: none; color: gray; opacity: .8; font-size: larger; margin-top: 50px;">
+          <p>Scroll for more <span class="fa fa-angle-double-down"></span></p>
+        </a>
+      </div>
+      <div class="bodyimage">
+        <div class="column">
+          <img src="image/cupoffer.jpg">
+          <img src="image/shakeoffer.jpg">
+        </div>
+        <div class="column">
+          <img src="image/iceoffer.jpg">
+          <img src="image/desback.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="dessert parallax" id="scroll">
+      <h6>Desserts</h6>
+      <div class="menu">
+        <div class="box-wrapper">
+          <img src="image/des1.jpg">
+          <div class="box-content">
+            <div class="title">Chocolate Cheesecake</div>
+            <div class="desc">Lorem ipsum dolor sit amet.</div>
+            <span class="price">4.67$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <img src="image/des2.jpg">
+          <div class="box-content">
+            <div class="title">Royal Delight</div>
+            <div class="desc">Lorem ipsum dolor sit amet.</div>
+            <span class="price">8.99$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star-o"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <img src="image/des3.jpg">
+          <div class="box-content">
+            <div class="title">Mint Oreo Cake</div>
+            <div class="desc">Lorem ipsum dolor sit amet.</div>
+            <span class="price">3.00$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star-o"></li>
+                <li class="fa fa-star-o"></li>
+                <li class="fa fa-star-o"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <img src="image/des4.jpg">
+          <div class="box-content">
+            <div class="title">Coconut Cream Crepe</div>
+            <div class="desc">Lorem ipsum dolor sit amet.</div>
+            <span class="price">3.27$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star-o"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <img src="image/des5.jpg">
+          <div class="box-content">
+            <div class="title">strawberry delight</div>
+            <div class="desc">Low fat, strawberries, egg, baking powder, sugar.</div>
+            <span class="price">2.00$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star-o"></li>
+                <li class="fa fa-star-o"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="new">
+            <img src="image/new.png">
+          </div>
+          <img src="image/des6.jpg">
+          <div class="box-content">
+            <div class="title">Blueberry Cream pie</div>
+            <div class="desc">Must test.</div>
+            <span class="price">5.67$</span>
+            <div class="footer">
+              <ul>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star-o"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="bodydetails">
+        <h6 style="font-size: 6vw;">Ice Cream</h6>
+        <div class="bottomborder">
+          <img src="image/border bottom.png" style="width: 100%;">
+        </div>
+        <p>Ice-cream is one of the most popular desserts. It is a frozen dessert made out of milk and cream generally
+          and
+          come in many flavours. Though children love ice creams the most, these days ice creams are made for all
+          age-groups. There are ice creams even for diabetics and heart patients</p>
+        <p class="commingsoon">Comming Soon !</p>
+      </div>
+      <div class="bodyimage">
+        <img src="image/ice.gif" style="height:400px;">
+      </div>
+    </div>
+    <div class="cook parallax">
+      <div class="body">
+        <div class="bodyimage">
+          <img src="image/cook2.jpg" style="margin:20px auto; height:400px;">
+        </div>
+        <div class="bodydetails">
+          <h6 style="font-size: 6vw; padding: 30px 0 0 0;">Best cook from BD</h6>
+          <div class="bottomborder">
+            <img src="image/border bottom.png" style="width: 100%;  filter:invert(100%);">
+          </div>
+          <p style="color: white;"><strong>Chef. Ayesha Khusi</strong><br>'Cooking or cookery is the art, technology,
+            science and craft of preparing food for consumption. ... Cooking is done both by people in their own
+            dwellings
+            and by professional cooks and chefs in restaurants and other food establishments.,</p>
+          <div class="logo">
+            <i class="fa fa-phone" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="call"></i>
+            <i class="fa fa-envelope" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="mail"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body" id="find">
+      <div class="bodydetails">
+        <img src="image/googlelocation.jpeg" style="width: 30%;margin:auto">
+        <h6 style="font-size: 6vw;">Visit us</h6>
+        <p>House-10, Block-C, Mirpur 12,Dhaka, Bangladesh</p>
+      </div>
+      <div class="bodyimage" id="googleMap" style="width:100%;height:400px;"></div>
+    </div>
+    <div id="reservation" class="reservation parallax">
+      <h6>Book a table !</h6>
+      <div class="logo" style="position: relative; padding-top: 5vh; justify-content: space-evenly;">
+        <i class="fa fa-cutlery" aria-hidden="true"><br>
+          <p>Single</p>
+        </i>
+        <i class="fa fa-cutlery" aria-hidden="true"><br>
+          <p>Couple</p>
+        </i>
+        <i class="fa fa-cutlery" aria-hidden="true"><br>
+          <p>Family</p>
+        </i>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div>
+        <ul>
+          <li><img src="image/phone.png">
+            <p>+088 016********</p>
+          </li>
+          <li><a href="https://www.facebook.com"><img src="image/facebook.png">
+              <p>Do we deserves a like ?</p>
+            </a></li>
+          <li><a href="https://www.instagram.com/_mir.labib_/?hl=en"></a><img src="image/instagram.png">
+            <p>Give a follow.</p> </a>
+          </li>
+          <li><a href="#"><img src="image/location.png">
+              <p>House-44, Block-D, Mirpur 12,Dhaka, Bangladesh</p>
+            </a></li>
+        </ul>
+      </div>
+      <div>
+      </div>
+      <p style="float:right; font-family: 'Times New Roman', Times, serif; bottom: 10%;right: 10%;">&copy by Mir Labib
+        Hossain</p>
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!--Script of NavScroll effect-->
+<script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+</script>
+<!--Script of tooltip-->
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  }); 
+</script>
+<!--Script of Popover-->
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+<!--Map-->
+<script>
+  function myMap() {
+    var mapProp = {
+      center: new google.maps.LatLng(23.8248114, 90.3684927),
+      zoom: 19,
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+  }
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq4hZTMBe8IXtn0ibW4ZcbALh9Ig4GJtg&callback=myMap"></script>
+
+</html>

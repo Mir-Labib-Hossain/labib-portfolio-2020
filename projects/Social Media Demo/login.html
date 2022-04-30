@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+Log-In page
+</title>
+<link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
+<style>
+    body{
+        background-attachment: fixed;
+        background:url('image/blackbackground.jpg') no-repeat center fixed; 
+        background-size: cover;
+    }
+    input{
+        padding: 1vw;
+        background-color: transparent;
+        margin: .5vw;
+    }
+    imput:hover{
+        opacity: 50%;
+    }
+    ::placeholder{
+        text-align: center;
+    }
+    fieldset{
+        max-width: 50%;
+        margin: 150px 300px 100px 300px;
+
+    }
+    legend{
+        font-size: 5vw;
+        text-align: center;
+        color: floralwhite;
+
+    }
+    legend{
+  color:white;
+  font-size:6em;
+  text-align:center;
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255,255,255,.8),
+                 0 0 20px rgba(255,255,255,.8),
+                 0 0 22px  rgba(255,255,255,.8),
+                 0 0 40px  red,
+                 0 0 60px  red,
+                 0 0 80px  red,
+                 0 0 100px red,
+                 0 0 140px red,
+                 0 0 200px red;
+  }
+  100% {
+    text-shadow: 0 0 2px rgba(255,255,255,.8),
+                 0 0 8px rgba(255,255,255,.8),
+                 0 0 10px rgba(255,255,255,.8),
+                 0 0 20px red,
+                 0 0 30px red,
+                 0 0 40px red,
+                 0 0 50px red,
+                 0 0 80px red;
+  }
+}
+    form
+    {
+        text-align: center;
+    }
+    .ain{
+        border-width: 0px 0px 1px 0px;
+        border-color: rgb(190, 65, 65)
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <fieldset>
+        <legend>Log<span>-</span>in</legend>
+        <form action="home.html" method="POST">
+            <input class="ain" type="text" placeholder="Username" required title="Enter username" ><br><br>
+            <input class="ain" type="password" placeholder="Password" required title="Enter password"><br><br><hr>
+            <input class="ain" style="color: white;" type="submit" value="Sign-in">
+        </form>
+    </fieldset>
+</body>
+</html>
+
+
+

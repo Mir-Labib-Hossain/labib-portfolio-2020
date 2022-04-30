@@ -1,0 +1,732 @@
+@font-face {
+    font-family: "Digital-7";
+    src: url("digital-7.monoitalic.ttf");
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    text-decoration: none;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: black;
+}
+.rgbShiftSlider {
+    /* xox block*/
+    /* display: none;  */
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: .4;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transform-origin: 50% 50%;
+}
+
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+#fulls, #pimg {
+    position: fixed;
+    top: 10px;
+    margin: 10px;
+    font-size: 24px;
+    color: #b38c52;
+    cursor: pointer;
+    width: fit-content;
+    animation-nameextr: back;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: 100000;
+}
+
+@keyframes back {
+    0% {
+        opacity: .0;
+    }
+    100% {
+        opacity: 2;
+    }
+}
+
+#pimg {
+    right: 5px;
+}
+
+#fulls {
+    right: 35px;
+    animation-delay: .5s;
+}
+
+.subPh {
+    color: #b38c52;
+    opacity: 0.7;
+    font-size: 3vw;
+    font-family: 'Pirata One', cursive;
+    padding-top: 100px;
+}
+
+.pir {
+    font-family: 'Pirata One', cursive;
+}
+
+.cin {
+    font-family: 'Cinzel Decorative';
+    color: white;
+}
+
+.path {
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #b38c52;
+}
+
+#project {
+    text-align: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.tooltipp {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.tooltipp .tooltiptextp {
+    font-size: 10px;
+    visibility: hidden;
+    width: 140px;
+    background-color: white;
+    font-family: 'Cinzel Decorative';
+    letter-spacing: 2px;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltipp .tooltiptextp::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 55%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.tooltipp:hover .tooltiptextp {
+    visibility: visible;
+    opacity: 1;
+    color: #b38c52
+}
+
+.update {
+    width: 100%;
+    position: relative;
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #b38c52;
+    padding: 20vh 0;
+}
+
+.ph {
+    font-family: 'Cinzel Decorative';
+    font-size: 5vw;
+    color: white;
+    padding: 5vh;
+    width: 100%;
+}
+
+/* Column Grids End */
+
+.detail {
+    position: relative;
+    opacity: 1;
+    font-size: 17px;
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #b38c52;
+    animation-name: swipe;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    width: 100px;
+    margin: 0 100%;
+}
+
+@keyframes swipe {
+    0% {
+        margin-right: -100%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.counter {
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.counter img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+b {
+    font-size: 20px;
+    color: #b38c52;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: "Digital-7";
+    color: red;
+}
+
+.count-text {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: VT323;
+    color: white;
+    opacity: .5;
+}
+
+/* pro slider */
+
+#pro {
+    margin: 0;
+    outline: none;
+    opacity: 1;
+}
+
+.timeline-carousel {
+    padding: 86px 6.9444% 90px 6.9444%;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-carousel h1 {
+    color: white;
+    font-size: 46px;
+    line-height: 50pd;
+    margin-bottom: 40px;
+    font-weight: 900;
+}
+
+.timeline-carousel__image {
+    padding-right: 30px;
+}
+
+.timeline-carousel__item {
+    cursor: pointer;
+    text-align: left;
+}
+
+.timeline-carousel__item .media-wrapper {
+    opacity: 1;
+    padding-bottom: 71.4%;
+    -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.timeline-carousel__item:last-child .timeline-carousel__item-inner:after {
+    width: calc(100% - 30px);
+}
+
+.timeline-carousel__item-inner {
+    position: relative;
+    padding-top: 45px;
+}
+
+.timeline-carousel__item-inner:after {
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    left: 0;
+    content: "";
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timeline-carousel__item-inner .proName {
+    font-size: 36px;
+    line-height: 36px;
+    color: white;
+    display: table;
+    letter-spacing: -1px;
+    padding-right: 10px;
+    z-index: 1;
+    position: relative;
+    margin: -15px 0 20px;
+    font-weight: 900;
+}
+
+.timeline-carousel__item-inner .proName:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -10px;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    z-index: 3;
+}
+
+.timeline-carousel__item-inner .proSurName {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #b38c52;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-family: "Pathway Gothic One", sans-serif;
+}
+
+.timeline-carousel__item-inner .subheading {
+    color: silver;
+    margin: 15px 0;
+    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.timeline-carousel__item-inner p {
+    font-size: 20px;
+    line-height: 18px;
+    color: white;
+    width: 80%;
+    font-weight: 400;
+    font-family: 'Cinzel Decorative';
+}
+
+.timeline-carousel__item-inner .viewProject {
+    font-size: 15px;
+    color: #b38c52;
+    display: table;
+    margin-bottom: 10px;
+    font-weight: 900;
+    position: relative;
+    font-family: "Pathway Gothic One", sans-serif;
+}
+
+.timeline-carousel__item-inner .viewProject:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    border-bottom: 2px solid #b38c52;
+    -webkit-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    -o-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.timeline-carousel__item-inner .viewProject:hover:after {
+    width: 100%;
+}
+
+.timeline-carousel__item-inner .pointer {
+    height: 29px;
+    position: relative;
+    z-index: 1;
+    margin: -4px 0 16px;
+}
+
+.timeline-carousel__item-inner .pointer:after, .timeline-carousel__item-inner .pointer:before {
+    position: absolute;
+    content: "";
+}
+
+.timeline-carousel__item-inner .pointer:after {
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    top: 0;
+    left: 0;
+    background-color: #b38c52;
+}
+
+.timeline-carousel__item-inner .pointer:before {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 4px;
+    background-color: #b38c52;
+}
+
+.slick-dots * {
+    display: none
+}
+
+.link {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.link a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.link .fa {
+    font-size: 28px;
+    margin-right: 8px;
+    color: #fff;
+}
+
+#timeLine .timelineScroll {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 900px;
+    position: relative;
+}
+
+#timeLine .timelineScroll__content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: .4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-family: 'Cinzel Decorative';
+    color: #fff;
+}
+
+#timeLine .timelineScroll__content-desc {
+    margin: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Cinzel Decorative';
+    font-weight: normal;
+}
+
+#timeLine .timelineScroll:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+@media only screen and (max-width: 767px) {
+    #timeLine .timelineScroll:before {
+        left: 40px;
+    }
+}
+
+#timeLine .timelineScroll-item {
+    padding: 40px 0;
+    opacity: .3;
+    filter: blur(2px);
+    transition: .5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+    margin-top: 10vh;
+}
+
+#timeLine .timelineScroll-item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-size: 70px;
+    font-family: "Pathway Gothic One", sans-serif;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+}
+
+#timeLine .timelineScroll-item:nth-child(odd) {
+    text-align: right;
+}
+
+#timeLine .timelineScroll-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+#timeLine .timelineScroll-item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 15px;
+}
+
+#timeLine .timelineScroll-item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+#timeLine .timelineScroll-item--active:before {
+    top: 50%;
+    transition: .3s all .2s;
+    opacity: 1;
+}
+
+#timeLine .timelineScroll-item--active #timeLine .timelineScroll__content-title {
+    margin: -50px 0 20px 0;
+}
+
+@media only screen and (max-width: 767px) {
+    #timeLine .timelineScroll-item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 80px;
+    }
+    #timeLine .timelineScroll-item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+    }
+    #timeLine .timelineScroll-item:nth-child(odd) {
+        text-align: center;
+    }
+    #timeLine .timelineScroll-item:last-child {
+        padding-bottom: 40px;
+    }
+    #timeLine .timelineScroll-item:before {
+        font-size: 40px;
+    }
+}
+
+#timeLine .timelineScroll__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+#timeLine .timelineScroll-container {
+    width: 100%;
+    position: relative;
+    padding: 80px 0;
+    transition: .3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#timeLine .timelineScroll-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
+
+#timeLine .timelineScroll-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+#timeLine .timelineScroll-header__title {
+    color: #fff;
+    font-size: 46px;
+    font-family: 'Cinzel Decorative';
+    font-weight: normal;
+    margin: 0;
+}
+
+#timeLine .timelineScroll-header__subtitle {
+    color: white;
+    font-family: 'Pirata One', cursive;
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    text-shadow: 1px 1px 17px black
+}
+
+#skill {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cinzel Decorative';
+    position: relative;
+}
+
+.barBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    text-align: left;
+}
+
+.bar {
+    width: 48%;
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #b38c52;
+    letter-spacing: 5px;
+}
+
+.bar span {
+    float: right;
+    font-family: "Pathway Gothic One", sans-serif;
+    color: #b38c52;
+    letter-spacing: 0;
+}
+
+.skillbar-container {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    background-color: #666463;
+    background-color: rgba(255, 255, 255, .1);
+    height: 35px;
+    height: 5px;
+}
+
+.skillBar {
+    height: 35px;
+    height: 5px;
+    width: 0px;
+    background-color: #b38c52;
+    opacity: .7;
+}
+
+#extra {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+.extraBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border-bottom: 1px solid #b38c52;
+    border-radius: 20%;
+}
+
+#goal {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#goal h2 {
+    font-family: "Pathway Gothic One", sans-serif;
+}
+
+.checked, .fa-star-half-full {
+    color: #b38c52;
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 90%;
+    }
+    .counter img {
+        width: 30px;
+    }
+    .count-title {
+        font-size: 30px;
+    }
+    .count-text {
+        font-size: 20px;
+    }
+    .bar {
+        width: 100%;
+    }
+    .extraBlock {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .timeline-carousel__item-inner p {
+        font-size: 17px;
+        line-height: 18px;
+    }
+    .count-title {
+        font-size: 20px;
+    }
+    .counter img {
+        width: 40px;
+    }
+    .timeline-carousel__item-inner p {
+        font-size: 15px;
+    }
+    .timeline-carousel__item-inner .subheading {
+        font-size: 13px;
+    }
+    #timeLine .timelineScroll-header__title {
+        color: #fff;
+        font-size: 36px;
+    }
+    #timeLine .timelineScroll__content-title {
+        font-size: 46px;
+    }
+    #timeLine .timelineScroll__content-desc {
+        font-size: 13px;
+    }
+    #goal h2 {
+        font-size: 20px;
+    }
+    #goal span{
+        font-size: 10px;
+    }
+}

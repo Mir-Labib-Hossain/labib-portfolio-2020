@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Cinzel Decorative" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+    <link href="images/start.png" rel="icon" />
+    <link href="css/laptop.css" rel="stylesheet" />
+
+    <title>Laptop</title>
+  </head>
+
+  <body>
+    <div id="laptop">
+      <div id="winload"></div>
+      <div id="dekstop" class="dek" scroll="no">
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="toggle cl" id="mobile" onclick="visual();">Start</div>
+        <div data-aos="zoom-in" class="toggles">
+          <div id="single" class="single-toggle toggle cl" onclick="stop();">Stop</div>
+          
+        </div>
+        
+        <audio loop id="rainSound">
+          <source src="mp3/rain.mp3" />
+        </audio>
+        <audio id="thunder">
+          <source src="mp3/Thunder.mp3" />
+        </audio>
+        <audio id="winS">
+          <source src="mp3/Windows Start.mp3" />
+        </audio>
+        <audio id="click">
+          <source src="mp3/click.mp3" />
+        </audio>
+
+        <div class="rain front-row"></div>
+        <div class="rain back-row"></div>
+        <div id="windowRec" class="window cl">
+          <div class="wh">Recycle Bin</div>
+          <div class="text" style="text-align: center">Eamty Bin ?</div>
+          <div style="display: flex">
+            <button>
+              <div onclick="closeRec();emty()">Yes</div>
+            </button>
+            <button>
+              <div onclick="closeRec();">No</div>
+            </button>
+          </div>
+        </div>
+        <div id="shut" class="window cl">
+          <div class="wh">Start</div>
+          <div class="text" style="text-align: center">
+            <img style="width: 10%" src="images/computer.png" />
+            <br />Are you sure wanna shut down ?
+          </div>
+          <div style="display: flex">
+            <button>
+              <div><a href="index.html">Yes</a></div>
+            </button>
+            <button>
+              <div onclick="shut()">No</div>
+            </button>
+          </div>
+        </div>
+        <div id="icons" class="cl">
+          <a href="index.html">
+            <div class="icon">
+              <img src="images/computer.png" alt="" />
+              <p>Home</p>
+            </div>
+          </a>
+          <a href="labib.html">
+            <div class="icon">
+              <img src="images/internet.png" alt="" />
+              <p>Labib Explorer</p>
+            </div>
+          </a>
+          <a href="project.html">
+            <div class="icon">
+              <img src="images/file.png" alt="" />
+              <p>Projects & Skills</p>
+            </div>
+          </a>
+          <a href="gallary.html">
+            <div class="icon">
+              <img src="images/galary.gif" alt="" />
+              <p>Gallery</p>
+            </div>
+          </a>
+          <a onclick="recModal();shut()">
+            <div class="icon">
+              <img id="rec" src="images/recycle.png" alt="" />
+              <p>Recycle bin</p>
+            </div>
+          </a>
+          <a href="contact.html">
+            <div class="icon">
+              <img src="images/tele.png" alt="" />
+              <p>Contact</p>
+            </div>
+          </a>
+        </div>
+        <div data-aos="fade-up" class="toolbar cl">
+          <div class="wnds"><p onclick="start();closeRec();">Start</p></div>
+          <div class="time">
+            <p id="timep" class="blink"></p>
+          </div>
+          <img onclick="start();closeRec();" src="images/start.png" style="padding-bottom: 3px" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/laptop.js"></script>
+</html>

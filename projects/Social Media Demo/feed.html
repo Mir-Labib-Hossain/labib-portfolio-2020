@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker:400' rel='stylesheet' type='text/css'>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    .noScroll::-webkit-scrollbar {
+        display: none;
+    }
+  
+    .posts{
+        display: grid;
+        grid-template-columns: 29vw auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "frame profileLocation"
+        "frame captionopinion";
+        margin-bottom: 6vw;
+        width: 100%;    
+    }
+ 
+    .frame{
+        grid-area: frame;
+        margin-right: 20px;
+        transition: transform 1s;
+        box-shadow: 0px 8px 16px 0px black;
+
+    }
+    .frame:hover{
+        box-shadow: 0px 8px 16px 0px rgba(66,220,219,.5);
+        cursor: pointer;
+        transform: rotate(5deg);
+        transition: transform 1s;
+    }
+    .content{
+        grid-area: content;
+        padding: 10px 10px 0 10px;
+    }
+    .content img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        max-width: 400px;
+    }
+    .posttype{
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        font-family: Permanent Marker, sans-serif;
+        font-size: 2vw;
+        color: black;
+    }
+    .posttype p{
+        padding: 10px;
+        margin: 0;
+    }
+    .profileLocation{
+        grid-area: profileLocation;
+        float: left;
+        color: gray;
+        padding: 0 0 20px 0;
+    }
+    .captionopinion{
+        grid-area: captionopinion;
+        float: left;
+        color: black;
+    }
+    .profile{
+        grid-area: profile;   
+        display: flex;
+        align-items:center;
+        margin-bottom: 15px;
+
+    }
+    .profile >img:hover{
+        transform: scale(3); 
+        transition: transform .4s;
+        box-shadow: 0px 8px 16px 0px rgba(66,220,219,.5);
+    }
+    .profileLocation p{
+        font-size: 1.5vw;
+        padding: 0 0 0 5px;
+        margin: 0;
+        float: left;
+    }
+    .profile img{
+        width: 5vw;
+        border-radius: 50%;
+    }
+    .info{
+        grid-area: info;
+    }
+    .caption{
+        grid-area: caption;
+        font-size: 1.5vw;
+        text-align: justify;
+        text-justify: inter-word;
+        color: gray;
+        padding: 10px 0;
+    }
+    .opinion{
+        grid-area: opinion;
+        margin-top: 20px;
+    }
+    .opinion li{
+        display: inline;
+        font-size: 2vw;
+    }  .opinion li:hover{
+        color: gray;
+        cursor: pointer;
+        
+    }
+    .opinion ul{
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+        border-bottom: 1px solid grey;
+        border-top: 1px solid grey;
+
+    }
+    .opinion ul:hover{
+        border-bottom: 1px solid rgba(66,220,219,.5);
+        border-top: 1px solid rgba(66,220,219,.5);
+    }
+    .comment{
+        border: solid sienna;
+    }
+   
+    @media screen and (max-width: 500px) {
+        .posts{
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-areas:
+            "profileLocation"
+            "frame"
+            "captionopinion";
+            margin-bottom: 6vw;
+            width: 80%;          
+        }
+        .posttype p{
+            font-size: large;  
+        }
+        .profileLocation p{
+        font-size: small;
+        }
+        .profile img{
+        width: 8vw;
+        }
+        .caption{
+            font-size: 15px;
+        }
+        .opinion li{
+            font-size: small;
+        }
+    }
+  .navbar-brand, .nav-link{
+      color: white;
+  }
+</style>
+<title>Feed</title>
+</head>
+<body class="noScroll">
+    
+  <div class="container" style="padding-top:7%">   
+    <nav class="fixed-top navbar navbar-expand-md  navbar-dark" style=" background-color:  rgba(66,220,219,1);" >
+        <a class="navbar-brand" href="home.html">U<span style="color: rgba(66,220,219,.5);">-</span>Network</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="feed.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="messenger.com"> <img src="image/messenger.webp" style="height: 25px;"><sup><span class="badge badge-danger badge-pill">50</span></sup></a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Setting</a>
+                <div class="dropdown-menu" style="color: gray;">
+                    <div class="dropdown-item"><a href="error">My Account</a> </div>
+                    <div class="dropdown-item"><a href="error">Privacy</a> </div>
+                    <div class="dropdown-item"><a href="login.html">Log-out</a> </div>
+                </div>
+              </div>
+          </li>    
+          </ul>
+        </div>  
+      </nav>
+      <br>
+      <div class="main noScroll" align="center">
+            <div class="posts">
+                <div class="frame">
+                    <div class="content">
+                        <img src="image\t2.jpg">
+                    </div>
+                    <div class="posttype">
+                        <p>Posted a new Pic</p>
+                    </div>
+                </div>
+                <div class="profileLocation">
+                    <div class="profile"><img src="image\tp.jpg"><p>ToniMahfud</p></div>
+                    <div class="info"><p>Germany, <span style="color: lightseagreen;" id="time"></span>.</p>
+                        <script>
+                        document.getElementById("time").innerHTML = document.lastModified;
+                        </script>
+                    </div>
+                </div>
+                <div class="captionopinion">
+                    <div class="caption">
+                        <br>I’m gone?
+                        From now on, I’ll be posting lots of behind the scenes photos in my stories here. I have so many more images in my archive that you guys don’t see!
+                        I think it’s an interesting way to give you a better feeling about me as a person, only through different photographs! So keep an eye for my stories here. I’ll highlight them under “BTS”. #tonimahfud #sunrise #roadtrip
+                        <br>
+                    </div>
+                    <div class="opinion">
+                        <ul>
+                           <li>Like</li>
+                           <li>Comment</li>
+                           <li>Send</li>
+                       </ul>
+                    </div>
+                    <!--<div class="comment">comment</div>-->
+                </div>
+            </div>
+
+            <div class="posts">
+                <div class="profileLocation">
+                    <div class="profile"><img src="image\gp.jpg"><p>@gigihadid</p></div>
+                    <div class="info"><p>Spain, <span style="color: lightseagreen;" id="time2"></span>.</p>
+                        <script>
+                        document.getElementById("time2").innerHTML = document.lastModified;
+                        </script></div>
+                </div>
+                <div class="captionopinion">
+                    <div class="caption">
+                        <br>
+                        Always a pleasure to end Fashion Month with @miumiu 🎺🎲🍷 thank you Mrs. Prada, @kegrand, @fabshot, @bitton and the whole team- you are a joyyyyy xxx
+                        <br>
+                    </div>
+                    <div class="opinion">
+                        <ul>
+                           <li>Like</li>
+                           <li>Comment</li>
+                           <li>Send</li>
+                       </ul>
+                    </div>
+                    <!--<div class="comment">comment</div>-->
+                </div>
+                <div class="frame">
+                    <div class="content">
+                        <img src="image\gigi.jpg">
+                    </div>
+                    <div class="posttype">
+                        <p>Posted a new Pic</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="posts">
+                <div class="profileLocation">
+                    <div class="profile"><img src="image\tp.jpg"><p>ToniMahfud</p></div>
+                    <div class="info"><p>Germany, <span style="color: lightseagreen;" id="time"></span>.</p>
+                        <script>
+                        document.getElementById("time").innerHTML = document.lastModified;
+                        </script>
+                    </div>
+                </div>
+                <div class="captionopinion">
+                    <div class="caption">
+                        <br>I’m gone?
+                        From now on, I’ll be posting lots of behind the scenes photos in my stories here. I have so many more images in my archive that you guys don’t see!
+                        I think it’s an interesting way to give you a better feeling about me as a person, only through different photographs! So keep an eye for my stories here. I’ll highlight them under “BTS”. #tonimahfud #sunrise #roadtrip
+                        <br>
+                    </div>
+                    <div class="opinion">
+                        <ul>
+                           <li>Like</li>
+                           <li>Comment</li>
+                           <li>Send</li>
+                       </ul>
+                    </div>
+                    <!--<div class="comment">comment</div>-->
+                </div>
+                <div class="frame">
+                    <div class="content">
+                        <img src="image\t2.jpg">
+                    </div>
+                    <div class="posttype">
+                        <p>Posted a new Pic</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>  
+    </div>
+
+</body>
+</html>
